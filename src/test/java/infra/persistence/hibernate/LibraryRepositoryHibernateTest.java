@@ -85,7 +85,7 @@ class LibraryRepositoryHibernateTest {
         assertTrue(existingBookAuthors.stream().anyMatch(author -> author.getName().equals(ANY_OTHER_AUTHOR_NAME)));
         Book newBookInFoundLibrary = foundLibrary.getBooks().get(ANY_OTHER_BOOK_NAME);
         assertEquals(ANY_OTHER_BOOK_NAME, newBookInFoundLibrary.getName());
-        List<Author> newBookAuthors = existingBookInFoundLibrary.getAuthors();
+        List<Author> newBookAuthors = newBookInFoundLibrary.getAuthors();
         assertEquals(authorsNumberForNewBook, newBookAuthors.size());
         assertTrue(newBookAuthors.stream().anyMatch(author -> author.getName().equals(ANY_AUTHOR_NAME)));
     }

@@ -16,5 +16,7 @@
 
         <!-- All entities to map -->
         <mapping class="domain.Library" />
+        <mapping class="domain.Book" />
+        <mapping class="domain.Author" />
     </session-factory>
 </hibernate-configuration>

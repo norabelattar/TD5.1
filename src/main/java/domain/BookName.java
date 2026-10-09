@@ -1,11 +1,21 @@
 package domain;
 
-public class BookName {
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Id;
 
+import java.io.Serializable;
+
+@Embeddable
+public class BookName implements Serializable {
+    
     private String name;
 
     public BookName(String name){
         this.name = name;
+    }
+
+    protected BookName() {
+
     }
 
     @Override
@@ -18,5 +28,10 @@ public class BookName {
         }
         BookName other = (BookName) obj;
         return this.name.equals(other.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
     }
 }
